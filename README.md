@@ -26,7 +26,7 @@ The app is trained on the **Chinese-MNIST** dataset:
 - 15,000 images of handwritten Chinese digits (0–14)
 - Each image is 64×64 grayscale
 
-📂 Dataset Link: [Chinese-MNIST on Kaggle](https://www.kaggle.com/datasets/gpreda/chinese-mnist)
+📂 Dataset Link: [Chinese-MNIST on Kaggle](https://www.kaggle.com/datasets/fedesoriano/chinese-mnist-digit-recognizer)
 
 ---
 
