@@ -1,6 +1,7 @@
 # Chinese Digit Recognizer (0–14)
 
 This is a Streamlit-based web app that allows users to draw or upload images of handwritten **Chinese digits (0–14)** and predicts the digit using pre-trained neural network models.
+**Live Demo**: [Open the App](https://chinese-mnist-digit-recognizer-qjbmzzqlcpuzufdjsjpxq8.streamlit.app/)
 
 ---
 
