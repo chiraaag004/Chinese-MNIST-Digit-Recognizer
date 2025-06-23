@@ -1,78 +1,50 @@
 # 🧠 Chinese Digit Recognizer (0–14)
 
-This is a Streamlit-based web app that allows users to draw or upload images of handwritten **Chinese digits (0–14)** and predicts the digit using pre-trained neural network models.
-
-🌐 **Live Demo**: [Open the App](https://chinese-mnist-digit-recognizer-qjbmzzqlcpuzufdjsjpxq8.streamlit.app/)
+This project focuses on recognizing handwritten **Chinese digits (0–14)** using various neural network models trained on the [Chinese-MNIST dataset](https://www.kaggle.com/datasets/fedesoriano/chinese-mnist-digit-recognizer).
 
 ---
 
-## 📚 About the Neural Network
+## 📚 Model Implementations
 
-This app uses a simple **feedforward neural network built from scratch** using NumPy. No deep learning frameworks (like TensorFlow or PyTorch) were used.
+The project includes **three different notebooks**, each implementing a distinct approach to compare performance, training complexity, and accuracy:
 
-- Input size: 64 × 64 grayscale image (flattened)
-- Hidden layers: 2 layers with ReLU activation
-- Output layer: Softmax layer for 15-class classification
-- Trained using:
-  - Gradient Descent
-  - Batch Gradient Descent
-  - Stochastic Gradient Descent (SGD)
+| Notebook                          | Framework        | Model Type      | Description                                              |
+| --------------------------------- | ---------------- | --------------- | -------------------------------------------------------- |
+| `Chines_MNIST_NN.ipynb`           | NumPy (Manual)   | Feedforward DNN | Fully connected layers, ReLU activation, Softmax output  |
+| `Chines_MNIST_CNN.ipynb`          | NumPy + Custom   | CNN (manual)    | Manual implementation of convolutions, pooling, backprop |
+| `Chines_MNIST_tensorflow.ipynb`   | TensorFlow/Keras | CNN (modern)    | High-level API with efficient training and tuning        |
 
 ---
 
 ## 📦 Dataset
 
-The app is trained on the **Chinese-MNIST** dataset:
-- 15,000 images of handwritten Chinese digits (0–14)
-- Each image is 64×64 grayscale
+**Chinese-MNIST**:
 
-📂 Dataset Link: [Chinese-MNIST on Kaggle](https://www.kaggle.com/datasets/fedesoriano/chinese-mnist-digit-recognizer)
+* 15,000 grayscale images of handwritten digits (0–14)
+* Image size: 64 × 64 pixels
+* Each digit corresponds to a unique Chinese numeral character
+
+📥 [Download Dataset on Kaggle](https://www.kaggle.com/datasets/fedesoriano/chinese-mnist-digit-recognizer)
 
 ---
 
 ## 🚀 Features
 
-- ✏️ Draw digits directly on a canvas
-- 📤 Upload handwritten digit images (JPG/PNG)
-- 🔀 Choose from three trained models:
-  - Gradient Descent
-  - Batch Gradient Descent
-  - Stochastic Gradient Descent (SGD)
-- 🖼️ Preprocessing:
-  - Grayscale conversion
-  - Inversion (if needed)
-  - Auto-cropping to digit's bounding box
-  - Resizing to 64×64 input (model-ready)
+* 📤 Accepts uploaded images of handwritten Chinese digits
+* 🔍 Automatic image preprocessing:
+
+  * Grayscale conversion
+  * Inversion correction (if background is black)
+  * Auto-cropping to bounding box of digit
+  * Resizing to 64×64 input
+* 📈 Comparative training and evaluation across all models
 
 ---
 
 ## 🛠️ Tech Stack
 
-- [Streamlit](https://streamlit.io/)
-- [NumPy](https://numpy.org/)
-- [Pillow](https://python-pillow.org/)
-- [OpenCV](https://opencv.org/) (via `opencv-python-headless`)
-- Custom neural network built without deep learning libraries
-
----
-
-## 📦 Installation
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/chiraaag004/Chinese-MNIST-Digit-Recognizer.git
-cd Chinese-MNIST-Digit-Recognizer
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the app
-
-```bash
-streamlit run app.py
-```
+* `NumPy` — matrix ops and manual model building
+* `OpenCV` — image processing utilities
+* `Pillow (PIL)` — image handling
+* `Matplotlib` — training visualization
+* `TensorFlow / Keras` — deep learning for fast prototyping
